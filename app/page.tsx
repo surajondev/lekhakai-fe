@@ -3,6 +3,8 @@
 import { Box } from "@chakra-ui/react";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import Benefits from "@/components/Benefits";
+import { Pricing } from "@/components/Pricing";
 
 export default function Home() {
   return (
@@ -55,7 +57,33 @@ export default function Home() {
       />
       <Hero />
       <Box position="relative">
+        <Box
+          width={634}
+          height={634}
+          flexShrink={0}
+          borderRadius={634}
+          backgroundColor="#FFD6D6"
+          position="absolute"
+          filter={"blur(250px)"}
+          top="20%"
+          left="-20%"
+          zIndex={-1}
+        />
         <Features />
+        <Benefits />
+        <Box
+          width={634}
+          height={634}
+          flexShrink={0}
+          borderRadius={634}
+          backgroundColor="#8B54BE"
+          position="absolute"
+          filter={"blur(400px)"}
+          top="50%"
+          left="70%"
+          zIndex={-1}
+        />
+        <Pricing />
       </Box>
     </Box>
   );
