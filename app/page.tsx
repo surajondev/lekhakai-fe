@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Benefits from "@/components/Benefits";
 import { Pricing } from "@/components/Pricing";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -84,6 +85,9 @@ export default function Home() {
           zIndex={-1}
         />
         <Pricing />
+      </Box>
+      <Box backgroundColor="#161C28">
+        <Footer />
       </Box>
     </Box>
   );

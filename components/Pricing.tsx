@@ -115,7 +115,7 @@ const MonthlyPricingData = [
       "Basic SEO",
     ],
     buttonText: "Go to pro",
-    selected: false,
+    selected: true,
   },
   {
     title: "Business",
@@ -126,7 +126,6 @@ const MonthlyPricingData = [
       "All topics idea for display",
       "Advanced SEO",
       "Topic Coverage",
-      "Realtime Support",
     ],
     buttonText: "Go to business",
     selected: false,
@@ -157,7 +156,7 @@ const YearlyPricingData = [
       "Basic SEO",
     ],
     buttonText: "Go to pro",
-    selected: false,
+    selected: true,
   },
   {
     title: "Business",
@@ -168,7 +167,6 @@ const YearlyPricingData = [
       "All topics idea for display",
       "Topic Coverage",
       "Advanced SEO",
-      "Realtime Support",
     ],
     buttonText: "Go to business",
     selected: false,
