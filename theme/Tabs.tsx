@@ -6,8 +6,6 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(tabsAnatomy.keys);
 
 const switchTabs = definePartsStyle((props) => {
-  const { colorScheme: c } = props; // extract colorScheme from component props
-
   return {
     tab: {
       borderRadius: "10px",

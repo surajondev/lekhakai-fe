@@ -6,6 +6,7 @@ import Features from "@/components/Features";
 import Benefits from "@/components/Benefits";
 import { Pricing } from "@/components/Pricing";
 import { Footer } from "@/components/Footer";
+import UsageSection from "@/components/UsageSections";
 
 export default function Home() {
   return (
@@ -57,6 +58,7 @@ export default function Home() {
         zIndex={-1}
       />
       <Hero />
+      <UsageSection />
       <Box position="relative">
         <Box
           width={634}

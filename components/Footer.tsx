@@ -4,6 +4,8 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { GoPlay } from "react-icons/go";
 import { IconContext } from "react-icons/lib";
 import Image from "next/image";
+import { JoinWishlist } from "@/cards/JoinWishlist";
+import FooterLink from "@/cards/FooterLink";
 
 export const Footer = () => {
   return (
@@ -13,9 +15,12 @@ export const Footer = () => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
+        justify={["space-between"]}
       >
         <Testimonial />
+        <JoinWishlist />
       </Stack>
+      <FooterLink />
     </Box>
   );
 };

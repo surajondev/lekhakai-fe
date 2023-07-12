@@ -97,7 +97,7 @@ const MonthlyPricingData = [
     price: 0,
     features: [
       "2 Searches Daily",
-      "10 topic ideasy",
+      "10 topic idea",
       "No Topics Coverage",
       "No SEO guidance",
     ],
@@ -138,7 +138,7 @@ const YearlyPricingData = [
     price: 0,
     features: [
       "2 Searches Daily",
-      "10 topic ideasy",
+      "10 topic idea",
       "No Topics Coverage",
       "No SEO guidance",
     ],
@@ -165,8 +165,8 @@ const YearlyPricingData = [
     features: [
       "Unlimited Searches",
       "All topics idea for display",
-      "Topic Coverage",
       "Advanced SEO",
+      "Topic Coverage",
     ],
     buttonText: "Go to business",
     selected: false,

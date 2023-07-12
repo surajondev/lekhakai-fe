@@ -4,6 +4,7 @@ import { Text } from "./Text";
 import { Heading } from "./Heading";
 import { Box } from "./Box";
 import { Tabs } from "./Tabs";
+import { Input } from "./Input";
 
 const theme = extendTheme({
   components: {
@@ -12,6 +13,7 @@ const theme = extendTheme({
     Heading: Heading,
     Box: Box,
     Tabs: Tabs,
+    Input: Input,
   },
 });
 

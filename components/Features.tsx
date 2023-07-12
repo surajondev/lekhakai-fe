@@ -1,7 +1,6 @@
 import React from "react";
 import { Stack, Heading, Text, Button } from "@chakra-ui/react";
 import FeatureCard from "@/cards/FeatureCard";
-import HeroImg from "@/public/images/Hero.png";
 
 const Features = () => {
   return (
