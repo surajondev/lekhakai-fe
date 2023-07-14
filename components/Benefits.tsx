@@ -2,7 +2,11 @@ import { Stack, Flex, Box, Heading, Text } from "@chakra-ui/react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { IconContext } from "react-icons/lib";
 import Image from "next/image";
-import HeroImg from "@/public/images/Hero.png";
+import BenefitImg from "@/public/images/Benefit.png";
+import { MiniDisplayCard } from "@/cards/miniCards/MiniDisplayCard";
+import ProfileImage from "@/public/images/Profile.png";
+import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import { HiOutlineCheckCircle } from "react-icons/hi";
 
 export default function Benefits() {
   return (
@@ -35,10 +39,40 @@ export default function Benefits() {
           flex={1}
           justify={"center"}
           align={"center"}
-          position={"relative"}
+          position="relative"
           w={"full"}
+          // border="solid 1px magenta"
         >
-          <Image alt="Hero Image" src={HeroImg} width={300} height={300} />
+          <Box position="absolute" top="10%" left="0%">
+            <MiniDisplayCard
+              title="Suraj Vishwakarma"
+              subTitle="Founder"
+              cardImage={ProfileImage}
+              icon={null}
+              flexD="row"
+            />
+          </Box>
+          <Box position="absolute" top="30%" left="60%">
+            <MiniDisplayCard
+              title="Total Income"
+              subTitle="$350.00"
+              cardImage={null}
+              icon={<TbBrandGoogleAnalytics />}
+              flexD="row"
+            />
+          </Box>
+          <Box position="absolute" top="80%" left="0%">
+            <MiniDisplayCard
+              title="Money Sent Successfully"
+              subTitle="$350.00"
+              cardImage={null}
+              icon={<HiOutlineCheckCircle />}
+              flexD="row-reverse"
+            />
+          </Box>
+          <Box borderRadius="10px" overflow="hidden">
+            <Image alt="Hero Image" src={BenefitImg} width={300} height={300} />
+          </Box>
         </Flex>
       </Stack>
     </Box>

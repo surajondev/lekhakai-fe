@@ -70,7 +70,7 @@ export const Testimonial = () => {
             {testimonials[index].review}
           </Text>
           <Text variant="primary-text" color="#A6A6A6">
-            - {testimonials[index].author}
+            _ {testimonials[index].author}
           </Text>
         </Stack>
       )}
