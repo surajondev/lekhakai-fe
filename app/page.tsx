@@ -86,7 +86,7 @@ export default function Home() {
           left="70%"
           zIndex={-1}
         />
-        <Pricing />
+        {/* <Pricing /> */}
       </Box>
       <Box backgroundColor="#161C28">
         <Footer />

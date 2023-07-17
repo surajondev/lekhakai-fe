@@ -50,7 +50,7 @@ export default function FooterLink() {
       >
         <SimpleGrid
           width="100%"
-          templateColumns={{ sm: "1fr 1fr", md: "3fr 1fr 1fr 1fr" }}
+          templateColumns={{ base: "1fr 1fr", md: "3fr 1fr 1fr 1fr" }}
           spacing={8}
           justifyContent="space-between"
         >

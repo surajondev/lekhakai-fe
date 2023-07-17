@@ -4,9 +4,10 @@ import { IconContext } from "react-icons/lib";
 import Image from "next/image";
 import BenefitImg from "@/public/images/Benefit.png";
 import { MiniDisplayCard } from "@/cards/miniCards/MiniDisplayCard";
-import ProfileImage from "@/public/images/Profile.png";
-import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import ProfileImage from "@/public/images/amarprofile.jpg";
+import { BiLinkAlt } from "react-icons/bi";
 import { HiOutlineCheckCircle } from "react-icons/hi";
+import { BsHash } from "react-icons/bs";
 import { StackDirection } from "@chakra-ui/react";
 import { StaticImageData } from "next/image";
 
@@ -83,7 +84,7 @@ export default function Benefits() {
 const BenefitsData = [
   "Find topics, research, edit, and publish articles faster",
   "Find relevant topics and research them thoroughly",
-  "Iddentify popular topics, and successful articless",
+  "Identify popular topics, and successful articless",
   "Easy to use and integrate with your blogging workflow",
   "Affordable and offer a free trial or low-cost subscription",
 ];
@@ -92,28 +93,28 @@ const miniDisplayCardData: MiniDisplayCardData = [
   {
     top: 10,
     left: 0,
-    title: "Suraj Vishwakarma",
-    subTitle: "Founder",
+    title: "Amar Gupta",
+    subTitle: "Technical Writer",
     cardImage: ProfileImage,
     icon: null,
-    flexD: "row",
+    flexD: "row-reverse",
   },
   {
     top: 40,
     left: 60,
-    title: "Total Income",
-    subTitle: "$350.00",
+    title: "Popular Tags",
+    subTitle: "#javascript, #react",
     cardImage: null,
-    icon: <TbBrandGoogleAnalytics />,
+    icon: <BsHash />,
     flexD: "row",
   },
   {
     top: 80,
     left: 0,
-    title: "Money Sent Successfully",
+    title: "Integrated with dev.to",
     subTitle: null,
     cardImage: null,
-    icon: <HiOutlineCheckCircle />,
+    icon: <BiLinkAlt />,
     flexD: "row-reverse",
   },
 ];

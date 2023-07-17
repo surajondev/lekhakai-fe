@@ -15,12 +15,12 @@ export const Footer = () => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
-        justify={["space-between"]}
+        justify={["center"]}
       >
-        <Box width={{ base: "100%", md: "45%" }}>
+        {/* <Box width={{ base: "100%", md: "45%" }}>
           <Testimonial />
-        </Box>
-        <Box width={{ base: "100%", md: "45%" }}>
+        </Box> */}
+        <Box width={{ base: "100%", md: "60%", lg: "50%" }}>
           <JoinWaitlist />
         </Box>
       </Stack>

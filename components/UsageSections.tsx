@@ -22,8 +22,9 @@ export default function UsageSection() {
               How We Help Technical Writers in Different Sections
             </Heading>
             <Text color="#A6A6A6" variant="secondary-text">
-              Our comprehensive suite of tools and services can help you write
-              clear, concise, and effective technical documentation.
+              We provide comprehensive assistance with topic research, AI
+              integration, and analytics to enhance your documentation process
+              and maximize its impact.
             </Text>
           </Stack>
           <Stack

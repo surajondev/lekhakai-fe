@@ -2,7 +2,7 @@ import React from "react";
 import { Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { IconContext } from "react-icons/lib";
-import { StackDirection } from "@chakra-ui/react";
+import { StackDirection, Box } from "@chakra-ui/react";
 import { StaticImageData } from "next/image";
 
 interface MiniDisplayCardProps {
@@ -32,7 +32,9 @@ export const MiniDisplayCard = ({
       boxShadow="0px 4px 9px 0px rgba(0, 0, 0, 0.1)"
     >
       {cardImage && (
-        <Image alt="Hero Image" src={cardImage} width={30} height={30} />
+        <Box borderRadius="50%" overflow="hidden">
+          <Image alt="Hero Image" src={cardImage} width={30} height={30} />
+        </Box>
       )}
       <Stack>
         <Text variant="secondary-text">{title}</Text>
