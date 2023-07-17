@@ -40,6 +40,8 @@ export const PricingCard = ({
         justifyContent="center"
         alignItems="center"
         gap={5}
+        width={{ base: "90%", lg: "32%" }}
+        height="100%"
       >
         <Heading variant="secondary-heading">{title}</Heading>
         <Text variant="secondary-text" color="#A6A6A6" textAlign="center">
@@ -91,6 +93,8 @@ export const PricingCard = ({
         position="relative"
         gap={5}
         overflow="hidden"
+        width={{ base: "90%", lg: "32%" }}
+        height="100%"
       >
         <Box
           display="flex"

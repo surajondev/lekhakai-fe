@@ -4,7 +4,7 @@ import React from "react";
 import { IconContext } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
 
-export const JoinWishlist = () => {
+export const JoinWaitlist = () => {
   return (
     <Stack
       spacing={{ base: 3, md: 6 }}
@@ -12,7 +12,6 @@ export const JoinWishlist = () => {
       backgroundColor="#222938"
       borderRadius="10px"
       p="2em 4em"
-      width="100%"
       justifyContent="center"
       alignItems="center"
     >
@@ -20,7 +19,7 @@ export const JoinWishlist = () => {
         <MdEmail />
       </IconContext.Provider>
       <Heading variant="primary-heading" color="#FFF">
-        Join Wishlist
+        Join Waitlist
       </Heading>
       <FormControl>
         <FormLabel>
@@ -31,7 +30,7 @@ export const JoinWishlist = () => {
         <Input variant="light-input" type="email" />
       </FormControl>
       <Button variant="primary-button" width="100%">
-        <Text variant="primary-text">Join Wishlist</Text>
+        <Text variant="primary-text">Join Waitlist</Text>
       </Button>
     </Stack>
   );

@@ -7,6 +7,18 @@ import { MiniDisplayCard } from "@/cards/miniCards/MiniDisplayCard";
 import ProfileImage from "@/public/images/Profile.png";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { HiOutlineCheckCircle } from "react-icons/hi";
+import { StackDirection } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
+
+type MiniDisplayCardData = Array<{
+  top: number;
+  left: number;
+  title: String;
+  subTitle: String | null;
+  cardImage?: StaticImageData | null;
+  icon: JSX.Element | null;
+  flexD: StackDirection;
+}>;
 
 export default function Benefits() {
   return (
@@ -43,33 +55,22 @@ export default function Benefits() {
           w={"full"}
           // border="solid 1px magenta"
         >
-          <Box position="absolute" top="10%" left="0%">
-            <MiniDisplayCard
-              title="Suraj Vishwakarma"
-              subTitle="Founder"
-              cardImage={ProfileImage}
-              icon={null}
-              flexD="row"
-            />
-          </Box>
-          <Box position="absolute" top="30%" left="60%">
-            <MiniDisplayCard
-              title="Total Income"
-              subTitle="$350.00"
-              cardImage={null}
-              icon={<TbBrandGoogleAnalytics />}
-              flexD="row"
-            />
-          </Box>
-          <Box position="absolute" top="80%" left="0%">
-            <MiniDisplayCard
-              title="Money Sent Successfully"
-              subTitle="$350.00"
-              cardImage={null}
-              icon={<HiOutlineCheckCircle />}
-              flexD="row-reverse"
-            />
-          </Box>
+          {miniDisplayCardData &&
+            miniDisplayCardData.map((item) => (
+              <Box
+                position="absolute"
+                top={`${item.top}%`}
+                left={`${item.left}%`}
+              >
+                <MiniDisplayCard
+                  title={item.title}
+                  subTitle={item.subTitle}
+                  cardImage={item.cardImage}
+                  icon={item.icon}
+                  flexD={item.flexD}
+                />
+              </Box>
+            ))}
           <Box borderRadius="10px" overflow="hidden">
             <Image alt="Hero Image" src={BenefitImg} width={300} height={300} />
           </Box>
@@ -85,4 +86,34 @@ const BenefitsData = [
   "Iddentify popular topics, and successful articless",
   "Easy to use and integrate with your blogging workflow",
   "Affordable and offer a free trial or low-cost subscription",
+];
+
+const miniDisplayCardData: MiniDisplayCardData = [
+  {
+    top: 10,
+    left: 0,
+    title: "Suraj Vishwakarma",
+    subTitle: "Founder",
+    cardImage: ProfileImage,
+    icon: null,
+    flexD: "row",
+  },
+  {
+    top: 40,
+    left: 60,
+    title: "Total Income",
+    subTitle: "$350.00",
+    cardImage: null,
+    icon: <TbBrandGoogleAnalytics />,
+    flexD: "row",
+  },
+  {
+    top: 80,
+    left: 0,
+    title: "Money Sent Successfully",
+    subTitle: null,
+    cardImage: null,
+    icon: <HiOutlineCheckCircle />,
+    flexD: "row-reverse",
+  },
 ];

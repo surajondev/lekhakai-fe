@@ -4,7 +4,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { GoPlay } from "react-icons/go";
 import { IconContext } from "react-icons/lib";
 import Image from "next/image";
-import { JoinWishlist } from "@/cards/JoinWishlist";
+import { JoinWaitlist } from "@/cards/JoinWaitlist";
 import FooterLink from "@/cards/FooterLink";
 
 export const Footer = () => {
@@ -17,8 +17,12 @@ export const Footer = () => {
         direction={{ base: "column", md: "row" }}
         justify={["space-between"]}
       >
-        <Testimonial />
-        <JoinWishlist />
+        <Box width={{ base: "100%", md: "45%" }}>
+          <Testimonial />
+        </Box>
+        <Box width={{ base: "100%", md: "45%" }}>
+          <JoinWaitlist />
+        </Box>
       </Stack>
       <FooterLink />
     </Box>
@@ -66,7 +70,7 @@ export const Testimonial = () => {
       </IconContext.Provider>
       {testimonials && (
         <Stack spacing={{ base: 6, md: 8 }}>
-          <Text variant="primary-text" color="#A6A6A6">
+          <Text variant="primary-text" color="#A6A6A6" height={100}>
             {testimonials[index].review}
           </Text>
           <Text variant="primary-text" color="#A6A6A6">
@@ -98,6 +102,32 @@ export const Testimonial = () => {
 };
 
 const testimonials = [
+  {
+    review:
+      "LekhakAI has truly revolutionized the way I approach technical writing. With its intelligent suggestions, grammar checks, and formatting assistance, it has become an invaluable tool in my arsenal.",
+    author: "Ashish Gupta",
+    image: "https://wallpapercave.com/wp/wp7256426.jpg",
+  },
+  {
+    review:
+      "As a seasoned technical writer, I am always on the lookout for tools that can streamline and enhance my writing process. That's why I was thrilled to discover LekhakAI.",
+    author: "Rishabh Singh",
+    image:
+      "https://e1.pxfuel.com/desktop-wallpaper/66/113/desktop-wallpaper-cool-anime-boy-1080x1080-anime-boy-blue-1080x1080-mafia-anime-guy.jpg",
+  },
+  {
+    review:
+      "LekhakAI has significantly improved my technical writing skills. Its contextual suggestions and vocabulary enrichment feature have helped me refine my language and streamline the writing process.",
+    author: "Vaishnavi Vichare",
+    image: "https://wallpapercave.com/wp/wp5102455.jpg",
+  },
+  {
+    review:
+      "LekhakAI has transformed the way I create technical documentation. Its simplified document structure and real-time collaboration capabilities have made writing and editing a breeze. ",
+    author: "Survesh Chavan",
+    image:
+      "https://profiles.bugcrowdusercontent.com/avatars/ec1ca11e50277842737042b0d4003c6a/goku-ultra-instinct-1-normal-636.png",
+  },
   {
     review:
       "LekhakAI has truly revolutionized the way I approach technical writing. With its intelligent suggestions, grammar checks, and formatting assistance, it has become an invaluable tool in my arsenal.",

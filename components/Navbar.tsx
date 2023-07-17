@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -19,6 +18,7 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
+import { GetEmail } from "@/cards/miniCards/GetEmail";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -40,27 +40,32 @@ function Navbar() {
         </Flex>
         <Heading>LekhakAI</Heading>
         <Spacer />
-        <DesktopNav />
+        <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <DesktopNav />
+        </Flex>
+
         <Spacer />
-        <Flex gap={5} alignItems="center">
-          <Link href="#">
+        {/* <Flex gap={5} alignItems="center">
+          <Link href="#" _hover={{ border: "none" }}>
             <Text color="#A6A6A6" variant="secondary-text">
               Sign in
             </Text>
           </Link>
           <Button variant="primary-button">Sign Up</Button>
-        </Flex>
+        </Flex> */}
+        <Box width={{ base: "50%", md: "30%" }}>
+          <GetEmail />
+        </Box>
       </Flex>
-      {/* <Collapse in={isOpen} animateOpacity>
+      <Collapse in={isOpen} animateOpacity>
         <MobileNav />
-      </Collapse> */}
+      </Collapse>
     </Box>
   );
 }
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -147,6 +152,7 @@ const MobileNav = () => {
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
+      mt={2}
     >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />

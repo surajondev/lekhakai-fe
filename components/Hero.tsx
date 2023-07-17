@@ -10,9 +10,26 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 import { SiNotion, SiUnsplash, SiGrammarly, SiOpenai } from "react-icons/si";
+import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import { HiOutlineCheckCircle } from "react-icons/hi";
 import { IconContext } from "react-icons/lib";
 import Image from "next/image";
 import HeroImg from "@/public/images/Hero.png";
+import { MiniDisplayCard } from "@/cards/miniCards/MiniDisplayCard";
+import ProfileImage from "@/public/images/Profile.png";
+import { StackDirection } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
+import { GetEmail } from "@/cards/miniCards/GetEmail";
+
+type MiniDisplayCardData = Array<{
+  top: number;
+  left: number;
+  title: String;
+  subTitle: String | null;
+  cardImage?: StaticImageData | null;
+  icon: JSX.Element | null;
+  flexD: StackDirection;
+}>;
 
 export default function Hero() {
   return (
@@ -36,7 +53,7 @@ export default function Hero() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: "column", sm: "row" }}
           >
-            <Button variant="capsule-button" backgroundColor="#8B54BD">
+            {/* <Button variant="capsule-button" backgroundColor="#8B54BD">
               <Text className="primary-text">Try it now</Text>
             </Button>
             <Button variant="capsule-button">
@@ -46,7 +63,10 @@ export default function Hero() {
               <Text className="primary-text" color="black" pl={2}>
                 See how it works
               </Text>
-            </Button>
+            </Button> */}
+            <Box width="70%">
+              <GetEmail />
+            </Box>
           </Stack>
         </Stack>
         <Flex
@@ -56,7 +76,25 @@ export default function Hero() {
           position={"relative"}
           w={"full"}
         >
-          <Image alt="Hero Image" src={HeroImg} width={300} height={300} />
+          {miniDisplayCardData &&
+            miniDisplayCardData.map((item) => (
+              <Box
+                position="absolute"
+                top={`${item.top}%`}
+                left={`${item.left}%`}
+              >
+                <MiniDisplayCard
+                  title={item.title}
+                  subTitle={item.subTitle}
+                  cardImage={item.cardImage}
+                  icon={item.icon}
+                  flexD={item.flexD}
+                />
+              </Box>
+            ))}
+          <Box borderRadius="10px" overflow="hidden">
+            <Image alt="Hero Image" src={HeroImg} width={300} height={300} />
+          </Box>
         </Flex>
       </Stack>
       <Box>
@@ -105,3 +143,33 @@ export default function Hero() {
     </Box>
   );
 }
+
+const miniDisplayCardData: MiniDisplayCardData = [
+  {
+    top: 10,
+    left: 0,
+    title: "Suraj Vishwakarma",
+    subTitle: "Founder",
+    cardImage: ProfileImage,
+    icon: null,
+    flexD: "row",
+  },
+  {
+    top: 40,
+    left: 60,
+    title: "Total Income",
+    subTitle: "$350.00",
+    cardImage: null,
+    icon: <TbBrandGoogleAnalytics />,
+    flexD: "row",
+  },
+  {
+    top: 80,
+    left: 0,
+    title: "Money Sent Successfully",
+    subTitle: null,
+    cardImage: null,
+    icon: <HiOutlineCheckCircle />,
+    flexD: "row-reverse",
+  },
+];

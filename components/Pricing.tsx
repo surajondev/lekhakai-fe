@@ -44,7 +44,9 @@ export const Pricing = () => {
                 align={"center"}
                 spacing={{ base: 8, md: 10 }}
                 py={{ base: 20, md: 28 }}
-                direction={{ base: "column", md: "row" }}
+                direction={{ base: "column", lg: "row" }}
+                // width={{ base: "90%", md: "30%" }}
+                justifyContent="space-between"
               >
                 {MonthlyPricingData &&
                   MonthlyPricingData.map((item, index) => {
@@ -66,7 +68,9 @@ export const Pricing = () => {
                 align={"center"}
                 spacing={{ base: 8, md: 10 }}
                 py={{ base: 20, md: 28 }}
-                direction={{ base: "column", md: "row" }}
+                direction={{ base: "column", lg: "row" }}
+                justifyContent="space-between"
+                // width={{ base: "90%", lg: "30%" }}
               >
                 {YearlyPricingData &&
                   YearlyPricingData.map((item, index) => {
@@ -105,7 +109,7 @@ const MonthlyPricingData = [
     selected: false,
   },
   {
-    title: "Pro",
+    title: "Creator",
     desc: "Suited for individual content creator. It will cover most of the features.",
     price: 9,
     features: [
@@ -114,7 +118,7 @@ const MonthlyPricingData = [
       "Topics Coverage",
       "Basic SEO",
     ],
-    buttonText: "Go to pro",
+    buttonText: "Go to creator",
     selected: true,
   },
   {
@@ -146,7 +150,7 @@ const YearlyPricingData = [
     selected: false,
   },
   {
-    title: "Pro",
+    title: "Creator",
     desc: "Suited for individual content creator. It will cover most of the features.",
     price: 84,
     features: [
@@ -155,7 +159,7 @@ const YearlyPricingData = [
       "Topics Coverage",
       "Basic SEO",
     ],
-    buttonText: "Go to pro",
+    buttonText: "Go to creator",
     selected: true,
   },
   {
