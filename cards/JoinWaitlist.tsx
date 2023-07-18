@@ -27,7 +27,11 @@ export const JoinWaitlist = () => {
             Email address
           </Text>
         </FormLabel>
-        <Input variant="light-input" type="email" placeholder="Join Waitlist" />
+        <Input
+          variant={"light-input"}
+          type="email"
+          placeholder={"Join Waitlist"}
+        />
       </FormControl>
       <Button variant="primary-button" width="100%">
         <Text variant="primary-text">Join Waitlist</Text>

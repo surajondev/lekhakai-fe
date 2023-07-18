@@ -1,4 +1,4 @@
-import { Flex, Box, Text, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Heading, Text, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import FeaturesTopic from "@/public/images/FeaturesTopic.png";
 import FeaturesAI from "@/public/images/FeaturesAI.png";
@@ -14,37 +14,31 @@ const imageArr = [FeaturesTopic, FeaturesAI, FeaturesAnalytics];
 
 function FeatureCard({ index, title, desc }: FeaturesCardProps) {
   return (
-    <Flex
+    <Stack
       w="full"
       direction="column"
-      alignItems="left"
-      justifyContent="center"
       gap="5"
+      textAlign={{ base: "center", md: "left" }}
     >
-      <Image
-        src={imageArr[index]}
-        alt={`Picture of ${title}`}
-        width={300}
-        height={300}
-      />
-      <Flex mt="1" justifyContent="space-between" alignContent="center">
-        <Box
-          fontSize="2xl"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          isTruncated
-        >
+      <Stack alignItems={{ base: "center", md: "left" }}>
+        <Image
+          src={imageArr[index]}
+          alt={`Picture of ${title}`}
+          width={300}
+          height={300}
+        />
+      </Stack>
+      <Stack>
+        <Heading variant="secondary-heading" color="#191A15">
           {title}
-        </Box>
-      </Flex>
-
-      <Flex justifyContent="space-between" alignContent="center">
+        </Heading>
+      </Stack>
+      <Stack>
         <Text variant="secondary-text" color="#A6A6A6">
           {desc}
         </Text>
-      </Flex>
-    </Flex>
+      </Stack>
+    </Stack>
   );
 }
 

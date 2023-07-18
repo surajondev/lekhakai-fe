@@ -1,10 +1,11 @@
-import { InputGroup, Input, InputRightElement } from "@chakra-ui/react";
+import { Box, InputGroup, Input, InputRightElement } from "@chakra-ui/react";
 import React from "react";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 
 export const GetEmail = ({}) => {
   return (
+    // <Box>
     <InputGroup variant="email-pill">
       <Input placeholder="Join Waitlist" />
       <InputRightElement>
@@ -15,5 +16,6 @@ export const GetEmail = ({}) => {
         </IconContext.Provider>
       </InputRightElement>
     </InputGroup>
+    // </Box>
   );
 };

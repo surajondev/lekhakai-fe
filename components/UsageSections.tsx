@@ -17,7 +17,11 @@ export default function UsageSection() {
           mt={20}
           direction={{ base: "column", md: "row" }}
         >
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+          <Stack
+            flex={1}
+            spacing={{ base: 5, md: 10 }}
+            textAlign={{ base: "center", md: "left" }}
+          >
             <Heading variant="primary-heading">
               How We Help Technical Writers in Different Sections
             </Heading>

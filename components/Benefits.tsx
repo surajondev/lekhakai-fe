@@ -31,7 +31,12 @@ export default function Benefits() {
         direction={{ base: "column", md: "row" }}
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading variant="primary-heading">What Benifit Will You Get</Heading>
+          <Heading
+            variant="primary-heading"
+            textAlign={{ base: "center", md: "left" }}
+          >
+            What Benifit Will You Get
+          </Heading>
           <Stack spacing={{ base: 4, sm: 10 }} direction={{ base: "column" }}>
             {BenefitsData &&
               BenefitsData.map((item) => {

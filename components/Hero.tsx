@@ -40,7 +40,11 @@ export default function Hero() {
         py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
       >
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack
+          flex={1}
+          spacing={{ base: 5, md: 10 }}
+          textAlign={{ base: "center", md: "left" }}
+        >
           <Heading variant="hero-heading">
             Powered your technical writing with AI
           </Heading>
@@ -52,6 +56,9 @@ export default function Hero() {
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: "column", sm: "row" }}
+            alignItems={{ base: "center", md: "left" }}
+            justify={{ base: "center", md: "left" }}
+            width={{ base: "100%", md: "70%" }}
           >
             {/* <Button variant="capsule-button" backgroundColor="#8B54BD">
               <Text className="primary-text">Try it now</Text>
@@ -64,9 +71,7 @@ export default function Hero() {
                 See how it works
               </Text>
             </Button> */}
-            <Box width="70%">
-              <GetEmail />
-            </Box>
+            <GetEmail />
           </Stack>
         </Stack>
         <Flex
@@ -98,13 +103,18 @@ export default function Hero() {
         </Flex>
       </Stack>
       <Box>
-        <Center>
+        <Center textAlign="center">
           <Heading variant="bold-medium-heading">
             Platforms that will be supported
           </Heading>
         </Center>
         <Center>
-          <SimpleGrid columns={[2, 2, 3]} spacing={20} mt={10}>
+          <SimpleGrid
+            columns={[2, 2, 3]}
+            spacing={{ base: 0, md: 20 }}
+            rowGap={{ base: 10, md: 20 }}
+            mt={10}
+          >
             <Flex alignItems="center">
               <IconContext.Provider value={{ color: "#A6A6A6", size: "2em" }}>
                 <BiLogoDevTo />

@@ -6,7 +6,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -15,6 +14,7 @@ import {
   Spacer,
   Heading,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
@@ -74,14 +74,7 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
-                href={navItem.href ?? "#"}
-                color={linkColor}
-                _hover={{
-                  textDecoration: "none",
-                  color: "#8B54BD",
-                }}
-              >
+              <Link href="/">
                 <Text variant="primary-text">{navItem.label}</Text>
               </Link>
             </PopoverTrigger>
@@ -111,14 +104,7 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
+    <Link href={href}>
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
@@ -204,7 +190,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link key={child.label} href={child.href}>
                 {child.label}
               </Link>
             ))}
@@ -218,7 +204,7 @@ interface NavItem {
   label: string;
   subLabel?: string;
   children?: Array<NavItem>;
-  href?: string;
+  href?: any;
 }
 
 const NAV_ITEMS: Array<NavItem> = [

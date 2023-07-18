@@ -10,6 +10,7 @@ const Features = () => {
         spacing={{ base: 8, md: 30 }}
         pt={{ base: 20, md: 20 }}
         direction={{ base: "column", md: "row" }}
+        textAlign={{ base: "center", md: "left" }}
       >
         <Heading variant="primary-heading">Our Features you can get</Heading>
         <Text color={"gray.500"} variant="secondary-text">
@@ -21,7 +22,6 @@ const Features = () => {
         </Button>
       </Stack>
       <Stack
-        align={"center"}
         spacing={{ base: 8, md: 10 }}
         pb={{ base: 15, md: 20 }}
         mt={{ base: 7, md: 10 }}
