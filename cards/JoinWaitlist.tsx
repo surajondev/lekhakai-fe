@@ -14,6 +14,7 @@ export const JoinWaitlist = () => {
       p="2em 4em"
       justifyContent="center"
       alignItems="center"
+      id="join-waitlist"
     >
       <IconContext.Provider value={{ color: "#8B54BD", size: "5em" }}>
         <MdEmail />

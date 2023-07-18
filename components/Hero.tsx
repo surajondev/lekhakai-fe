@@ -82,11 +82,12 @@ export default function Hero() {
           w={"full"}
         >
           {miniDisplayCardData &&
-            miniDisplayCardData.map((item) => (
+            miniDisplayCardData.map((item, index) => (
               <Box
                 position="absolute"
                 top={`${item.top}%`}
                 left={`${item.left}%`}
+                key={index}
               >
                 <MiniDisplayCard
                   title={item.title}

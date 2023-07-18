@@ -56,9 +56,9 @@ export const PricingCard = ({
         <Box backgroundColor="#F9FAFB" borderRadius="10px" p="2em" width="100%">
           <Stack spacing={{ base: 4, sm: 10 }} direction={{ base: "column" }}>
             {features &&
-              features.map((item) => {
+              features.map((item, index) => {
                 return (
-                  <Flex gap={2} alignItems="center">
+                  <Flex gap={2} alignItems="center" key={index}>
                     <IconContext.Provider
                       value={{ color: "#8B54BD", size: "1.5em" }}
                     >
@@ -139,9 +139,9 @@ export const PricingCard = ({
         >
           <Stack spacing={{ base: 4, sm: 10 }} direction={{ base: "column" }}>
             {features &&
-              features.map((item) => {
+              features.map((item, index) => {
                 return (
-                  <Flex gap={2} alignItems="center">
+                  <Flex gap={2} alignItems="center" key={index}>
                     <IconContext.Provider
                       value={{ color: "#8B54BD", size: "1.5em" }}
                     >

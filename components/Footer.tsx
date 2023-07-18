@@ -79,9 +79,15 @@ export const Testimonial = () => {
         </Stack>
       )}
       <Flex gap={2}>
-        {profileBadgeArr.map((item) => {
+        {profileBadgeArr.map((item, index) => {
           return (
-            <Box height={50} width={50} borderRadius="full" overflow="hidden">
+            <Box
+              height={50}
+              width={50}
+              borderRadius="full"
+              overflow="hidden"
+              key={index}
+            >
               <Image
                 src={item.image}
                 width={50}

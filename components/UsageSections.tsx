@@ -38,9 +38,9 @@ export default function UsageSection() {
             width={{ base: "90%", md: "50%" }}
           >
             {stepsData &&
-              stepsData.map((item) => {
+              stepsData.map((item, index) => {
                 return (
-                  <Flex gap={5} alignItems="center">
+                  <Flex gap={5} alignItems="center" key={index}>
                     <Box
                       padding={2}
                       boxShadow="0px 4px 9px 0px rgba(0, 0, 0, 0.1);"

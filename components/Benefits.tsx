@@ -23,7 +23,7 @@ type MiniDisplayCardData = Array<{
 
 export default function Benefits() {
   return (
-    <Box className="mainContainer">
+    <Box className="mainContainer" id="benefits">
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -39,9 +39,9 @@ export default function Benefits() {
           </Heading>
           <Stack spacing={{ base: 4, sm: 10 }} direction={{ base: "column" }}>
             {BenefitsData &&
-              BenefitsData.map((item) => {
+              BenefitsData.map((item, index) => {
                 return (
-                  <Flex gap={2} alignItems="center">
+                  <Flex gap={2} alignItems="center" key={index}>
                     <IconContext.Provider
                       value={{ color: "#8B54BD", size: "2em" }}
                     >
@@ -62,11 +62,12 @@ export default function Benefits() {
           // border="solid 1px magenta"
         >
           {miniDisplayCardData &&
-            miniDisplayCardData.map((item) => (
+            miniDisplayCardData.map((item, index) => (
               <Box
                 position="absolute"
                 top={`${item.top}%`}
                 left={`${item.left}%`}
+                key={index}
               >
                 <MiniDisplayCard
                   title={item.title}

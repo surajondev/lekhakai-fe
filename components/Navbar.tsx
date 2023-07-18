@@ -65,17 +65,18 @@ function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
     <Stack direction={"row"} spacing={7} alignItems="center">
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+      {NAV_ITEMS.map((navItem, index) => (
+        <Box key={index}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link href="/">
-                <Text variant="primary-text">{navItem.label}</Text>
+              <Link href={navItem.href} scroll={true}>
+                <Text variant="primary-text" _hover={{ color: "#8B54BD" }}>
+                  {navItem.label}
+                </Text>
               </Link>
             </PopoverTrigger>
 
@@ -89,8 +90,8 @@ const DesktopNav = () => {
                 minW={"sm"}
               >
                 <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                  {navItem.children.map((child, index) => (
+                    <DesktopSubNav key={index} {...child} />
                   ))}
                 </Stack>
               </PopoverContent>
@@ -140,8 +141,8 @@ const MobileNav = () => {
       display={{ md: "none" }}
       mt={2}
     >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+      {NAV_ITEMS.map((navItem, index) => (
+        <MobileNavItem key={index} {...navItem} />
       ))}
     </Stack>
   );
@@ -189,8 +190,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           align={"start"}
         >
           {children &&
-            children.map((child) => (
-              <Link key={child.label} href={child.href}>
+            children.map((child, index) => (
+              <Link key={index} href={child.href}>
                 {child.label}
               </Link>
             ))}
@@ -210,6 +211,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",
+    href: "/",
     // children: [
     //   {
     //     label: "Explore Design Work",
@@ -225,6 +227,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Features",
+    href: "#features",
     // children: [
     //   {
     //     label: "Job Board",
@@ -239,12 +242,12 @@ const NAV_ITEMS: Array<NavItem> = [
     // ],
   },
   {
-    label: "Blogs",
-    href: "#",
+    label: "Benefits",
+    href: "#benefits",
   },
   {
-    label: "Pricing",
-    href: "#",
+    label: "Join",
+    href: "#join-waitlist",
   },
 ];
 

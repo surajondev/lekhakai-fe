@@ -61,14 +61,14 @@ export default function FooterLink() {
             </Text>
           </Stack>
           {footerLinkData &&
-            footerLinkData.map((item) => (
-              <Stack align={"flex-start"} spacing={5}>
+            footerLinkData.map((item, index) => (
+              <Stack align={"flex-start"} spacing={5} key={index}>
                 <Text variant="primary-text" color="#FFF">
                   {item.title}
                 </Text>
                 {item.links &&
-                  item.links.map((link) => (
-                    <Link href={"#"}>
+                  item.links.map((link, index) => (
+                    <Link href={"#"} key={index}>
                       <Text variant="primary-text" color="#A6A6A6">
                         {link.name}
                       </Text>

@@ -58,6 +58,7 @@ export const Pricing = () => {
                         features={item.features}
                         buttonText={item.buttonText}
                         selected={item.selected}
+                        key={index}
                       />
                     );
                   })}
@@ -82,6 +83,7 @@ export const Pricing = () => {
                         features={item.features}
                         buttonText={item.buttonText}
                         selected={item.selected}
+                        key={index}
                       />
                     );
                   })}
