@@ -1,10 +1,16 @@
+import { join } from "@/services/api";
 import { Box, Button, Heading, Input, Stack, Text } from "@chakra-ui/react";
 import { FormControl, FormLabel } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { IconContext } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
 
 export const JoinWaitlist = () => {
+  const [email, setEmail] = useState<string>("");
+
+  const handleGetEmail = () => {
+    join(email);
+  };
   return (
     <Stack
       spacing={{ base: 3, md: 6 }}
@@ -32,9 +38,10 @@ export const JoinWaitlist = () => {
           variant={"light-input"}
           type="email"
           placeholder={"Join Waitlist"}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
-      <Button variant="primary-button" width="100%">
+      <Button variant="primary-button" width="100%" onClick={handleGetEmail}>
         <Text variant="primary-text">Join Waitlist</Text>
       </Button>
     </Stack>
