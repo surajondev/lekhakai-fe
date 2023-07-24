@@ -16,5 +16,13 @@ export const Text = defineStyleConfig({
       fontWeight: "500",
       lineHeight: "normal",
     },
+    "input-error-text": {
+      fontFamily: "Inter",
+      fontSize: "14px",
+      fontStyle: "normal",
+      fontWeight: "400",
+      lineHeight: "normal",
+      color: "red",
+    },
   },
 });
