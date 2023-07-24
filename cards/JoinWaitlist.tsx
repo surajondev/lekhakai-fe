@@ -32,7 +32,7 @@ export const JoinWaitlist = () => {
           direction="column"
           backgroundColor="#222938"
           borderRadius="10px"
-          p="2em 4em"
+          p={{ base: "2em 2em", md: "2em 4em" }}
           justifyContent="center"
           alignItems="center"
           id="join-waitlist"
