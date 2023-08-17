@@ -8,11 +8,6 @@ import { IconContext } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
 
 export const JoinWaitlist = () => {
-  const [email, setEmail] = useState<string>("");
-
-  const handleGetEmail = () => {
-    join(email);
-  };
   return (
     <Formik
       initialValues={{ email: "" }}
