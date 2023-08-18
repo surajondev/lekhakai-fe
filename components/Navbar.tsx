@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Flex,
   Text,
   IconButton,
@@ -45,14 +46,17 @@ function Navbar() {
         </Flex>
 
         <Spacer />
-        {/* <Flex gap={5} alignItems="center">
-          <Link href="#" _hover={{ border: "none" }}>
+        <Flex gap={5} alignItems="center">
+          <Link href="/SignIn"
+          //  _hover={{ border: "none" }}
+           >
             <Text color="#A6A6A6" variant="secondary-text">
               Sign in
             </Text>
           </Link>
-          <Button variant="primary-button">Sign Up</Button>
-        </Flex> */}
+          <Link href="/SignUp">
+          <Button variant="primary-button">Sign Up</Button></Link>
+        </Flex>
         <Box width={{ base: "50%", md: "30%" }}>
           <GetEmail />
         </Box>

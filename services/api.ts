@@ -15,3 +15,36 @@ export const join = async (email: string) => {
     toast.error(error.response.data.error);
   }
 };
+
+export const singIn = async (email: string, password: string) => {
+  try {
+    const res = await axios.post(`${baseURL}/auth/login`, {
+      email,
+      password,
+    });
+    toast.success("login Successfull");
+  } catch (error: any) {
+    toast.error(error.response.data.error);
+  }
+};
+
+export const singUp = async (
+  first_name: string,
+  last_name: string,
+  email: string,
+  password: string,
+  devto_username: string
+) => {
+  try {
+    const res = await axios.post(`${baseURL}/auth/register`, {
+      first_name,
+      last_name,
+      email,
+      password,
+      devto_username,
+    });
+    toast.success("Registered Successfull");
+  } catch (error: any) {
+    toast.error(error.response.data.error);
+  }
+};
