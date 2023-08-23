@@ -46,7 +46,7 @@ function Navbar() {
         </Flex>
 
         <Spacer />
-        <Flex gap={5} alignItems="center">
+        {/* <Flex gap={5} alignItems="center">
           <Link href="/SignIn"
           //  _hover={{ border: "none" }}
            >
@@ -56,7 +56,7 @@ function Navbar() {
           </Link>
           <Link href="/SignUp">
           <Button variant="primary-button">Sign Up</Button></Link>
-        </Flex>
+        </Flex> */}
         <Box width={{ base: "50%", md: "30%" }}>
           <GetEmail />
         </Box>
