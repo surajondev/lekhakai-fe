@@ -23,6 +23,7 @@ import { GetEmail } from "@/cards/miniCards/GetEmail";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const appURL: string = process.env.APP_URL || "";
 
   return (
     <Box className="mainContainer" pt={4} pb={4}>
@@ -39,27 +40,29 @@ function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Heading>LekhakAI</Heading>
+        <Heading>EasyWrite.Dev</Heading>
         <Spacer />
         <Flex display={{ base: "none", md: "flex" }} ml={10}>
           <DesktopNav />
         </Flex>
 
         <Spacer />
-        {/* <Flex gap={5} alignItems="center">
-          <Link href="/SignIn"
-          //  _hover={{ border: "none" }}
-           >
+        <Flex gap={5} alignItems="center">
+          <Link
+            href={`${appURL}/login`}
+            //  _hover={{ border: "none" }}
+          >
             <Text color="#A6A6A6" variant="secondary-text">
               Sign in
             </Text>
           </Link>
-          <Link href="/SignUp">
-          <Button variant="primary-button">Sign Up</Button></Link>
-        </Flex> */}
-        <Box width={{ base: "50%", md: "30%" }}>
+          <Link href={`${appURL}/register`}>
+            <Button variant="primary-button">Sign Up</Button>
+          </Link>
+        </Flex>
+        {/* <Box width={{ base: "50%", md: "30%" }}>
           <GetEmail />
-        </Box>
+        </Box> */}
       </Flex>
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />

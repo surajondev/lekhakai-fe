@@ -55,9 +55,9 @@ export default function FooterLink() {
           justifyContent="space-between"
         >
           <Stack spacing={6}>
-            <Heading color="#8B54BD">LekhakAI</Heading>
+            <Heading color="#8B54BD">EasyWrite.Dev</Heading>
             <Text variant="secondary-text" color="#A6A6A6">
-              Get started LekhakAI try product
+              Get started EasyWrite.Dev try product
             </Text>
           </Stack>
           {footerLinkData &&
@@ -68,7 +68,7 @@ export default function FooterLink() {
                 </Text>
                 {item.links &&
                   item.links.map((link, index) => (
-                    <Link href={"#"} key={index}>
+                    <Link href={`${link.url}`} key={index}>
                       <Text variant="primary-text" color="#A6A6A6">
                         {link.name}
                       </Text>
@@ -86,7 +86,7 @@ export default function FooterLink() {
         justifyContent="space-between"
       >
         <Text variant="secondary-text" color="#FFF">
-          © 2023 LekhakAI Inc. Copyright and rights reserved
+          © 2023 EasyWrite.Dev Inc. Copyright and rights reserved
         </Text>
         <Flex gap={10}>
           <Link href="#">
@@ -110,30 +110,24 @@ const footerLinkData = [
     title: "Product",
     links: [
       { name: "Overview", url: "#" },
-      { name: "Features", url: "#" },
+      { name: "Features", url: "#features" },
       { name: "Tutorials", url: "#" },
-      { name: "Pricing", url: "#" },
-      { name: "Releases", url: "#" },
     ],
   },
   {
     title: "Support",
     links: [
-      { name: "Help Center", url: "#" },
+      { name: "Contact Us", url: "#" },
       { name: "Terms of Service", url: "#" },
-      { name: "Legal", url: "#" },
       { name: "Privacy Policy", url: "#" },
-      { name: "Status", url: "#" },
     ],
   },
   {
     title: "Follow Us",
     links: [
-      { name: "Facebook", url: "#" },
-      { name: "Twitter", url: "#" },
-      { name: "Dribble", url: "#" },
-      { name: "Instagram", url: "#" },
-      { name: "LinkedIn", url: "#" },
+      { name: "Dev.to", url: "#" },
+      { name: "Hashnode", url: "#" },
+      { name: "Twitter/X", url: "#" },
     ],
   },
 ];

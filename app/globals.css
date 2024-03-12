@@ -99,6 +99,10 @@ a {
   justify-content: center;
 }
 
+.platformIcon:hover{
+  color:"red"
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

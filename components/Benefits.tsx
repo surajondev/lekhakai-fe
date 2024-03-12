@@ -92,7 +92,7 @@ const BenefitsData = [
   "Find relevant topics and research them thoroughly",
   "Identify popular topics, and successful articless",
   "Easy to use and integrate with your blogging workflow",
-  "Affordable and offer a free trial or low-cost subscription",
+  // "Affordable and offer a free trial or low-cost subscription",
 ];
 
 const miniDisplayCardData: MiniDisplayCardData = [

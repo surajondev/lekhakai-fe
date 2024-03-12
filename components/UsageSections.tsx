@@ -26,9 +26,9 @@ export default function UsageSection() {
               How We Help Technical Writers in Different Sections
             </Heading>
             <Text color="#A6A6A6" variant="secondary-text">
-              We provide comprehensive assistance with topic research, AI
-              integration, and analytics to enhance your documentation process
-              and maximize its impact.
+              We provide comprehensive assistance with topic research,
+              scheduling article , and analytics to enhance your documentation
+              process and maximize its impact.
             </Text>
           </Stack>
           <Stack
@@ -72,12 +72,12 @@ export default function UsageSection() {
 const stepsData = [
   {
     title: "Topic Research",
-    desc: "We can help you gather information, identify your audience, and develop a clear plan for your documentation.",
+    desc: "We will help you in finding article titles that more people look to read.",
     icon: <BiFileFind />,
   },
   {
-    title: "AI Assitance",
-    desc: "Helping you with AI for the article research, editing and publishing.",
+    title: "Scheduling Article",
+    desc: "Helping you writing, scheduling and publish article across mulitple platform from one place.",
     icon: <RiAiGenerate />,
   },
   {

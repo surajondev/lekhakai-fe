@@ -47,12 +47,12 @@ const FeaturesCardData = [
   {
     index: 0,
     title: "Topic Generation",
-    desc: "Generate customized topics based on your previous article’s performance.",
+    desc: "Generate topic ideas based on previous articles performance on the platform.",
   },
   {
     index: 1,
-    title: "AI-Assistance",
-    desc: "Helping you with AI for the article research, editing and publishing.",
+    title: "Scheduling Article",
+    desc: "Helping you writing, scheduling and publish article across mulitple platform from one place.",
   },
   {
     index: 2,
