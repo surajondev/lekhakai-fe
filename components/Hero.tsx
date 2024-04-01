@@ -112,7 +112,7 @@ export default function Hero() {
       <Box>
         <Center textAlign="center">
           <Heading variant="bold-medium-heading">
-            Platforms that will be supported
+            Platforms that are supported now
           </Heading>
         </Center>
         <Center>

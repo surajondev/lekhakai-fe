@@ -19,11 +19,31 @@ import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
-import { GetEmail } from "@/cards/miniCards/GetEmail";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const appURL: string = process.env.APP_URL || "";
+  const [session, setSession] = useState(null);
+
+  const getSession = async () => {
+    const {
+      data: { session },
+      error: sessionError,
+    } = await supabase.auth.getSession();
+    if (sessionError) {
+      setSession(null);
+    } else {
+      //@ts-ignore
+      setSession(session);
+    }
+  };
+
+  useEffect(() => {
+    getSession();
+    console.log("nav", session);
+  }, []);
 
   return (
     <Box className="mainContainer" pt={4} pb={4}>
@@ -47,22 +67,26 @@ function Navbar() {
         </Flex>
 
         <Spacer />
-        <Flex gap={5} alignItems="center">
-          <Link
-            href={`${appURL}/login`}
-            //  _hover={{ border: "none" }}
-          >
-            <Text color="#A6A6A6" variant="secondary-text">
-              Sign in
-            </Text>
+        {session == null && (
+          <Flex gap={5} alignItems="center">
+            <Link
+              href={`${appURL}/login`}
+              //  _hover={{ border: "none" }}
+            >
+              <Text color="#A6A6A6" variant="secondary-text">
+                Sign in
+              </Text>
+            </Link>
+            <Link href={`${appURL}/register`}>
+              <Button variant="primary-button">Sign Up</Button>
+            </Link>
+          </Flex>
+        )}
+        {session !== null && (
+          <Link href={`${appURL}/dashboard`}>
+            <Button variant="primary-button">Dashboard</Button>
           </Link>
-          <Link href={`${appURL}/register`}>
-            <Button variant="primary-button">Sign Up</Button>
-          </Link>
-        </Flex>
-        {/* <Box width={{ base: "50%", md: "30%" }}>
-          <GetEmail />
-        </Box> */}
+        )}
       </Flex>
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
@@ -253,8 +277,8 @@ const NAV_ITEMS: Array<NavItem> = [
     href: "#benefits",
   },
   {
-    label: "Join",
-    href: "#join-waitlist",
+    label: "Blog",
+    href: "/blog",
   },
 ];
 
