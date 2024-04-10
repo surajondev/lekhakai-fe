@@ -102,9 +102,9 @@ export const ArticleList = () => {
         spacing="40px"
       >
         {articleData &&
-          articleData.map((item: any) => {
+          articleData.map((item: any, index: any) => {
             return (
-              <GridItem colSpan={{ base: 6, lg: 2 }}>
+              <GridItem colSpan={{ base: 6, lg: 2 }} key={index}>
                 <Wrap spacing="30px" marginBottom="10">
                   <WrapItem
                     width={{ base: "100%", sm: "100%", md: "100%", lg: "100%" }}

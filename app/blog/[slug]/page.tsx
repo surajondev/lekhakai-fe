@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { error } from "console";
 import { DisplayArticle } from "./DisplayArticle";
 
-const articlePage = () => {
+const ArticlePage = () => {
   const [articleData, setArticleData] = useState<any>(null);
 
   const router = useRouter();
@@ -118,4 +118,4 @@ const articlePage = () => {
   );
 };
 
-export default articlePage;
+export default ArticlePage;
