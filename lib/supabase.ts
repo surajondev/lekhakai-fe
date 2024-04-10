@@ -8,4 +8,5 @@ const anonKey = process.env.SUPABASE_ANON;
 // export const supabaseAdmin = process.env.JWT_SEC;
 console.log(supabaseUrl, anonKey);
 
+//@ts-ignore
 export const supabase = createClient(supabaseUrl, anonKey);
