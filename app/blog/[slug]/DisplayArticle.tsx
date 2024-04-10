@@ -46,11 +46,9 @@ export const DisplayArticle = ({ articleData }: any) => {
         />
       </Stack>
       <Box>
-        <Markdown
-          components={ChakraUIRenderer(MarkdownTheme)}
-          children={articleData.markdown}
-          skipHtml
-        />
+        <Markdown components={ChakraUIRenderer(MarkdownTheme)} skipHtml>
+          {articleData.markdown}
+        </Markdown>
       </Box>
     </Stack>
   );
