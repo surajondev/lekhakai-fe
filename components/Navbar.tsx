@@ -21,28 +21,20 @@ import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import axios from "axios";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const appURL: string = process.env.APP_URL || "";
-  const [session, setSession] = useState(null);
+  const [sessionNav, setSessionNav] = useState(null);
 
   const getSession = async () => {
-    const {
-      data: { session },
-      error: sessionError,
-    } = await supabase.auth.getSession();
-    if (sessionError) {
-      setSession(null);
-    } else {
-      //@ts-ignore
-      setSession(session);
-    }
+    const session = localStorage.getItem("easywrite.dev-login-data");
+    console.log("session", session);
   };
 
   useEffect(() => {
     getSession();
-    console.log("nav", session);
   }, []);
 
   return (
@@ -67,7 +59,7 @@ function Navbar() {
         </Flex>
 
         <Spacer />
-        {session == null && (
+        {sessionNav == null && (
           <Flex gap={5} alignItems="center">
             <Link
               href={`${appURL}/login`}
@@ -82,7 +74,7 @@ function Navbar() {
             </Link>
           </Flex>
         )}
-        {session !== null && (
+        {sessionNav !== null && (
           <Link href={`${appURL}/dashboard`}>
             <Button variant="primary-button">Dashboard</Button>
           </Link>
@@ -256,26 +248,26 @@ const NAV_ITEMS: Array<NavItem> = [
     //   },
     // ],
   },
-  {
-    label: "Features",
-    href: "#features",
-    // children: [
-    //   {
-    //     label: "Job Board",
-    //     subLabel: "Find your dream design job",
-    //     href: "#",
-    //   },
-    //   {
-    //     label: "Freelance Projects",
-    //     subLabel: "An exclusive list for contract work",
-    //     href: "#",
-    //   },
-    // ],
-  },
-  {
-    label: "Benefits",
-    href: "#benefits",
-  },
+  // {
+  //   label: "Features",
+  //   href: "#features",
+  // children: [
+  //   {
+  //     label: "Job Board",
+  //     subLabel: "Find your dream design job",
+  //     href: "#",
+  //   },
+  //   {
+  //     label: "Freelance Projects",
+  //     subLabel: "An exclusive list for contract work",
+  //     href: "#",
+  //   },
+  // ],
+  // },
+  // {
+  //   label: "Benefits",
+  //   href: "#benefits",
+  // },
   {
     label: "Blog",
     href: "/blog",
