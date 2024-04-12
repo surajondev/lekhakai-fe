@@ -20,8 +20,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
-import axios from "axios";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();

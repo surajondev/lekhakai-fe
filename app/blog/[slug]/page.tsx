@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Stack, Heading, Box } from "@chakra-ui/react";
+import { Stack, Heading, Box, Skeleton } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -37,7 +37,7 @@ const ArticlePage = () => {
   }, []);
 
   return (
-    <Box overflow="hidden">
+    <Box overflow="hidden" margin="0 auto">
       <Box
         width={634}
         height={634}
@@ -84,7 +84,49 @@ const ArticlePage = () => {
         ml={"30%"}
         zIndex={-1}
       />
-      {articleData != null && <DisplayArticle articleData={articleData} />}
+      {!articleData && (
+        <Stack
+          spacing={10}
+          margin="0 auto"
+          marginTop={20}
+          marginBottom={20}
+          width={{
+            xl: "60%",
+            "2xl": "50%",
+            lg: "70%",
+            base: "100%",
+            md: "80%",
+          }}
+        >
+          {/* @ts-ignore */}
+          <Skeleton colorScheme="purple">
+            <div style={{ borderRadius: "10px", height: "300px" }} />
+          </Skeleton>
+          <Stack>
+            <Skeleton colorScheme="purple">
+              <div style={{ borderRadius: "10px", height: "100px" }} />
+            </Skeleton>
+            <Skeleton colorScheme="purple">
+              <div style={{ borderRadius: "10px", height: "40px" }} />
+            </Skeleton>
+            <Skeleton colorScheme="purple">
+              <div style={{ borderRadius: "10px", height: "100px" }} />
+            </Skeleton>
+          </Stack>
+          <Box>
+            <Skeleton colorScheme="purple">
+              <div style={{ borderRadius: "10px", height: "600px" }} />
+            </Skeleton>
+          </Box>
+        </Stack>
+      )}
+      <Box
+        width={{ xl: "60%", "2xl": "50%", lg: "70%", base: "100%", md: "80%" }}
+        margin="0 auto"
+        marginBottom={40}
+      >
+        {articleData != null && <DisplayArticle articleData={articleData} />}
+      </Box>
       <Box position="relative">
         <Box
           width={634}

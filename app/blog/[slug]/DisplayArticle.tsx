@@ -26,7 +26,7 @@ interface Props {
 export const DisplayArticle = ({ articleData }: any) => {
   console.log(articleData.markdown);
   return (
-    <Stack className="mainContainer" spacing={10}>
+    <Stack width="60%" className="mainContainer" spacing={10} marginBottom={20}>
       {/* @ts-ignore */}
       <Image
         transform="scale(1.0)"

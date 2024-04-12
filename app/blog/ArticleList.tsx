@@ -12,6 +12,7 @@ import {
   SpaceProps,
   GridItem,
   SimpleGrid,
+  Skeleton,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
@@ -101,6 +102,33 @@ export const ArticleList = () => {
         }}
         spacing="40px"
       >
+        {!articleData &&
+          [0, 1, 2].map((item: any) => {
+            return (
+              <GridItem colSpan={{ base: 6, lg: 2 }}>
+                <Wrap spacing="30px" marginBottom="10">
+                  <WrapItem
+                    width={{ base: "100%", sm: "100%", md: "100%", lg: "100%" }}
+                  >
+                    <Box w="100%" height="100%">
+                      <Box borderRadius="lg" overflow="hidden">
+                        <Box
+                          textDecoration="none"
+                          _hover={{ textDecoration: "none" }}
+                        >
+                          <Skeleton colorScheme="purple">
+                            <div
+                              style={{ borderRadius: "10px", height: "400px" }}
+                            />
+                          </Skeleton>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </WrapItem>
+                </Wrap>
+              </GridItem>
+            );
+          })}
         {articleData &&
           articleData.map((item: any, index: any) => {
             return (
