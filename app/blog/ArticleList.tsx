@@ -79,7 +79,7 @@ export const ArticleList = () => {
       console.log(artilceError);
     } else {
       setArticleData(articleData);
-      console.log(articleData);
+      console.log("articledata", articleData);
     }
   };
 

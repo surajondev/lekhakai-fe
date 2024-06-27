@@ -5,7 +5,6 @@ import { Stack, Heading, Box, Skeleton } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
-import { error } from "console";
 import { DisplayArticle } from "./DisplayArticle";
 
 const ArticlePage = () => {
